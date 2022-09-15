@@ -1,17 +1,24 @@
 <template>
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <Movie v-for="movie in moives" :key="movie.id" :title="movie.title" :rating="movie.rating"></Movie>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Movie from "@/components/Movie";
 
 export default {
   name: 'App',
+  data: function () {
+    return {
+      moives: [
+        {id: 1, title: "金刚狼1", rating:8.1}
+      ]
+    }
+  },
   components: {
-    HelloWorld
+    Movie
   }
 }
 </script>
